@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<main class="wrap">
+<!-- <div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1> -->
+  <image-cropper #cropper *ngIf="cropperUrl" (croppedBase64)="getBase64($event)"
+                        [imageUrl]="cropperUrl"></image-cropper>
+<div *ngIf="cropperUrlFinal">
+<h1>Result</h1>
+<img [src]="cropperUrlFinal">
+</div>
+
+<input type="file" (change)="onChange($event)"/>
+<!-- </div> -->
+</main>
+
